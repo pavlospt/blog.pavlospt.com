@@ -1,0 +1,4 @@
+baseURL = "https://blog.pavlospt.com"
+languageCode = "en-us"
+title = "Solid Quacamole"
+theme = "ananke"
