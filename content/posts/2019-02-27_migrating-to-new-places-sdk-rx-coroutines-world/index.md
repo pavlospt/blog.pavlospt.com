@@ -8,14 +8,15 @@ description: ""
 
 subtitle: "Context"
 
-image: "/posts/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/images/1.png" 
+image: "/images/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/1.png"
 images:
- - "/posts/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/images/1.png" 
- - "/posts/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/images/2.png" 
-
+  [
+    "/images/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/1.png",
+    "/images/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/2.png",
+  ]
 
 aliases:
-    - "/migrating-to-new-places-sdk-rx-coroutines-world-9adcedef20c"
+  - "/migrating-to-new-places-sdk-rx-coroutines-world-9adcedef20c"
 ---
 
 ![image](/posts/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/images/1.png)
@@ -31,8 +32,6 @@ The new Places SDK brings in new methods replacing the previous ones, so this sh
 In this article we will explore the migration to the new Places SDK on Android and provide helper examples for **RxJava** and **Coroutines**.
 
 ### Changed methods
-
-
 
 ![image](/posts/2019-02-27_migrating-to-new-places-sdk-rx-coroutines-world/images/2.png)
 
@@ -58,10 +57,7 @@ Since the burden of migrating the whole library was too much, we decided to conv
 
 The solution was pretty simple. All we needed to do is create a new class that would extend **ObservableOnSubscribe.**
 
-
 TaskObservable.kt
-
-
 
 This allowed us to create a simple extension function (we are using Kotlin, but this would be pretty trivial task in a Java codebase as well), to convert any **Task** to an **Observable**.
 `fun &lt;T&gt; Task&lt;T&gt;.toObservable(): Observable&lt;T&gt; = Observable.create(TaskObservable(this))`
@@ -76,10 +72,7 @@ Also that was a chance for us to get our hands dirty and try-out Coroutines and 
 
 The solution here was pretty simple as well. We only needed to convert the **Task** callback-style API to a **suspend fun.**
 
-
 SuspendedTask.kt
-
-
 
 Once again, we added an extension function doing the work described previously. For the sake of simplicity we are only handling the **success** and **failure** cases here, but you might want to cover more cases, like cancelled tasks etc.### **Conclusion**
 

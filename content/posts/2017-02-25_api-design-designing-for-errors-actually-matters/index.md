@@ -8,13 +8,12 @@ description: ""
 
 subtitle: "Software engineering (SWE) is the application of engineering to the development of software in a systematic method."
 
-image: "/posts/2017-02-25_api-design-designing-for-errors-actually-matters/images/1.jpeg" 
+image: "/images/2017-02-25_api-design-designing-for-errors-actually-matters/1.jpeg"
 images:
- - "/posts/2017-02-25_api-design-designing-for-errors-actually-matters/images/1.jpeg" 
-
+  - "/images/2017-02-25_api-design-designing-for-errors-actually-matters/1.jpeg"
 
 aliases:
-    - "/api-design-why-designing-for-errors-actually-matters-15d850c686ad"
+  - "/api-design-why-designing-for-errors-actually-matters-15d850c686ad"
 ---
 
 ![image](/posts/2017-02-25_api-design-designing-for-errors-actually-matters/images/1.jpeg)
@@ -54,6 +53,7 @@ Re-checked everything and made sure that API keys are correct, that I was not mi
 Started Googling around and ended up finding that the only reported issues and solutions, were the exact same I found last time. So, no apparent reason that I could think of, this time...
 
 Spent a lot of hours debugging and trying different things, none of them seemed to be working. _Then it hit me_.
+
 > What if I have the Location setting off?
 
 I pulled down the Notification Center and there it was. The Location was **OFF.** What If I turned it **ON** and retry? Location was ON now. App starts and **_voila_**_:_ I got my result finally.> But why are you telling us, all of these, just to prove that you are forgetting to do the obvious thing first?Let me remind you, we are **Software Engineers** and we deal with a lot of context switching on a day, but most of all we deal with a lot of problem solving. We are trained to spot such things in advance, but we are humans above all and we are doomed to make mistakes from time-to-time.What I described above could have been resolved in just a second, if Google Android Engineers had designed the errors of Awareness API from the perspective of the consumer.
@@ -61,4 +61,5 @@ I pulled down the Notification Center and there it was. The Location was **OFF.*
 I guess, it is not just me that finds it somewhat strange, that a missing Permission from Manifest and a Setting turned OFF, map to the exact same error. **Business wise** it probably DOES mean the same, but when you are integrating such a **black-box API**, you know nothing about the business logic.**Conclusion**
 
 As Software Engineers, it is our duty to hide our **business logic** behind **self-explanatory errors,** to the consumers of our code/API/Library/you_name_it. A simple change of mindset, could potentially save a lot of hours for a colleague out there.**TL;DR**
+
 > A simple change of mindset can help us be better at how we code and how we design our APIs for the wild :D

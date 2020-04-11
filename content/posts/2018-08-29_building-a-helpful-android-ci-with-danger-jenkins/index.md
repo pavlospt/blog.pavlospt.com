@@ -8,12 +8,13 @@ description: ""
 
 subtitle: "In our days, almost every project, is backed by a Continuous Integration system (aka CI). Either that is an Open Source project or a…"
 
-image: "/posts/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/images/1.png" 
-images:
- - "/posts/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/images/1.png" 
- - "/posts/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/images/2.png" 
- - "/posts/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/images/3.png" 
- - "/posts/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/images/4.png" 
+image: "/images/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/1.png" 
+images: [
+  "/images/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/1.png",
+  "/images/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/2.png",
+  "/images/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/3.png",
+  "/images/2018-08-29_building-a-helpful-android-ci-with-danger-jenkins/4.png"
+]
 
 
 aliases:

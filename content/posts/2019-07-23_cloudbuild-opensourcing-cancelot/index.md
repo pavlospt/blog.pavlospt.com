@@ -8,24 +8,18 @@ description: ""
 
 subtitle: "CloudBuild is a CI/CD offered by Google. At Workable’s Mobile department we made a proof of concept to check if CloudBuild fit’s our needs…"
 
-image: "/posts/2019-07-23_cloudbuild-opensourcing-cancelot/images/1.png" 
-images:
- - "/posts/2019-07-23_cloudbuild-opensourcing-cancelot/images/1.png" 
-
+image: "/images/2019-07-23_cloudbuild-opensourcing-cancelot/1.png"
+images: ["/images/2019-07-23_cloudbuild-opensourcing-cancelot/1.png"]
 
 aliases:
-    - "/cloudbuild-open-sourcing-cancelot-de58f3ceaa83"
+  - "/cloudbuild-open-sourcing-cancelot-de58f3ceaa83"
 ---
 
 > Automatically cancel running builds on the same branch, when a new commit is pushed
 
-
-
 ![image](/posts/2019-07-23_cloudbuild-opensourcing-cancelot/images/1.png)
 
 Image taken from: [https://cloud.google.com/images/products/cloud-build/cloud-build.png](https://cloud.google.com/images/products/cloud-build/cloud-build.png)
-
-
 
 CloudBuild is a CI/CD offered by Google. At [Workable](https://medium.com/u/e5ecc5b405f2)’s Mobile department we made a proof of concept to check if CloudBuild fits our needs in order to be used for artifact (APK) building.A complex project requires a lot of custom configuration in order to properly set it up and we were able to find most of them in the great CloudBuilders community repo.
 
@@ -44,10 +38,7 @@ Cancelot is the name of the Builder we built for the purpose described above. In
 Cancelot is added as a buildstep on your CloudBuild YAML file and is responsible to check for any builds that are currently running for the same branch.
 
 It makes use of the CloudBuild Go package in order to fetch the running builds, by filtering with the following criteria:
-``build_id != &#34;[CURRENT_BUILD_ID]&#34; AND   
-source.repo_source.branch_name = &#34;[BRANCH_NAME]&#34; AND   
-status = &#34;WORKING&#34; AND   
-start_time&lt;&#34;[CURRENT_BUILD_START_TIME]&#34;``
+`build_id != &#34;[CURRENT_BUILD_ID]&#34; AND source.repo_source.branch_name = &#34;[BRANCH_NAME]&#34; AND status = &#34;WORKING&#34; AND start_time&lt;&#34;[CURRENT_BUILD_START_TIME]&#34;`
 
 After successfully fetching any previously started (&amp; still running builds) it loops through them and cancels them.
 
@@ -55,12 +46,13 @@ After successfully fetching any previously started (&amp; still running builds) 
 
 Cancelot’s usage and setup is inspired by the CloudBuilders “slackbot” so it is very easy to use it.
 
-*   Deploy the GCR image of Cancelot to your project’s GCR
-*   Add Cancelot’s buildstep in your CloudBuild YAML file`steps:  
-- name: &#39;gcr.io/$PROJECT_ID/cancelot&#39;  
+- Deploy the GCR image of Cancelot to your project’s GCR
+- Add Cancelot’s buildstep in your CloudBuild YAML file`steps:
+
+* name: &#39;gcr.io/$PROJECT_ID/cancelot&#39;  
   args: [   
     &#39;--current_build_id&#39;, &#39;$BUILD_ID&#39;,  
-    &#39;--branch_name&#39;, &#39;$BRANCH_NAME&#39;  
+   &#39;--branch_name&#39;, &#39;\$BRANCH_NAME&#39;  
   ]`
 
 ### Open Source

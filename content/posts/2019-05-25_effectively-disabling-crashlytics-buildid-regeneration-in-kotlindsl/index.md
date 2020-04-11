@@ -8,20 +8,19 @@ description: ""
 
 subtitle: "Android Studio 3.5 has reached beta and it was time to try it out as a daily driver in work. Especially with Project Marble having…"
 
-image: "/posts/2019-05-25_effectively-disabling-crashlytics-buildid-regeneration-in-kotlindsl/images/1.png" 
+image: "/images/2019-05-25_effectively-disabling-crashlytics-buildid-regeneration-in-kotlindsl/1.png"
 images:
- - "/posts/2019-05-25_effectively-disabling-crashlytics-buildid-regeneration-in-kotlindsl/images/1.png" 
-
+  [
+    "/images/2019-05-25_effectively-disabling-crashlytics-buildid-regeneration-in-kotlindsl/1.png",
+  ]
 
 aliases:
-    - "/effectively-disabling-crashlytics-buildid-re-generation-in-kotlindsl-a3025d7c38c8"
+  - "/effectively-disabling-crashlytics-buildid-re-generation-in-kotlindsl-a3025d7c38c8"
 ---
 
 ![image](/posts/2019-05-25_effectively-disabling-crashlytics-buildid-regeneration-in-kotlindsl/images/1.png)
 
 Image taken from ProAndroidDev
-
-
 
 Android Studio 3.5 has reached beta and it was time to try it out as a daily driver in work. Especially with Project Marble having introduced so many bug fixes and performance improvements, that meant the benefits would have an immediate effect.
 
@@ -49,9 +48,6 @@ which translated to KotlinDSL was similar to:
 
 The above line was placed in a custom build type which was the one we were using to init some of the rest of our build types, that are being used for different staging servers. The setup was similar to something like the following:
 
-
-
-
 Apparently this solution was not correct. Since “Apply Code changes” yield such an error, we started investigating and actually trying out different solutions.
 
 ### The actual solution
@@ -60,14 +56,12 @@ Fabric advises to use the syntax displayed above in order to disable **buildId**
 
 After searching a bit around we found a few different ways to write the same thing, either on Github or on StackOverflow. Some of them, are the following:
 
-
-
-
 The correct one can be found on line 5. This solution though had to be manually applied on each **buildType** since it seems that it was not propagated when using the `initWith` function on custom **buildTypes**.
 
 #### Explanation
 
 As user Ivan Tokic mentions on their [answer](https://stackoverflow.com/a/55745719/1470614):
+
 > You can only call `extra` on `ExtensionAware` objects, with `BuildType` not being declared as one.> However, during runtime, build types actually are `ExtensionAware`, which is why this works in Groovy due to its dynamicity, but not in Kotlin where `extra` in this scope will reference the `Project`&#39;s extensions.
 
 This was actually the reason that explained the mishap we had between our transition from Groovy to KotlinDSL.
