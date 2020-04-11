@@ -1,4 +1,51 @@
 baseURL = "https://blog.pavlospt.com/"
 languageCode = "en-us"
 title = "Solid Quacamole"
-theme = "ananke"
+theme = "hugo-theme-chunky-poster"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 10
+
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
+author = "authors"
+
+[params]
+  author = "Pavlos-Petros Tournaris"
+  description = "An engineering blogging site"
+
+  # Photo by Alexandru Acea on Unsplash
+  homepageImage = "/images/homepage-image.jpg"
+  share = true
+  showLanguageSwitcher = false
+
+  # Custom CSS and JS. Relative to /static/css and /static/js respectively.
+  customCSS = []
+  customJS = []
+
+  [params.social]
+    rss = true
+    email = "p.tournaris@gmail.com"
+    twitter = "https://twitter.com/tpavlos"
+    linkedin = "https://www.linkedin.com/in/pavlospt"
+    stack-overflow = "https://stackoverflow.com/users/1470614/pavlos"
+    github = "https://github.com/pavlospt"
+    medium = "https://medium.com/@p.tournaris"
+    keybase = "https://keybase.io/pavlospt"
+
+[markup]
+  [markup.highlight]
+    codeFences = false
+
+[services]
+  [services.instagram]
+    disableInlineCSS = true
+
+  [services.twitter]
+    disableInlineCSS = true

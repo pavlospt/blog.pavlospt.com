@@ -8,9 +8,8 @@ description: ""
 
 subtitle: "RecyclerView Adapter w/ ViewBinding"
 
-image: "/posts/2020-03-29_android-mvi-architecture-with-jetpack-coroutinesflowpart-1recyclerview-adapter-w/images/1.jpeg" 
-images:
- - "/posts/2020-03-29_android-mvi-architecture-with-jetpack-coroutinesflowpart-1recyclerview-adapter-w/images/1.jpeg" 
+image: "/images/2020-03-29_android-mvi-architecture-with-jetpack-coroutinesflowpart-1recyclerview-adapter-w/1.jpeg" 
+images: ["/images/2020-03-29_android-mvi-architecture-with-jetpack-coroutinesflowpart-1recyclerview-adapter-w/1.jpeg"]
 
 aliases:
     - "/android-mvi-architecture-with-jetpack-coroutines-flow-part-1-recyclerview-adapter-w-83a10134207f"
