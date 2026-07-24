@@ -43,7 +43,7 @@ In **2022**, the legacy backend server hosting the original database went offlin
 
 Rather than maintaining a costly traditional server, we built a brand-new backend on **Cloudflare Workers**:
 
-```mermaid
+{{< mermaid >}}
 graph TD
     A["University Public Website"] -->|"Raw .xlsx Timetables"| B["Cloudflare Worker Scraper"]
     B -->|"Edge Parsing & Normalization"| C["Cloudflare D1 / KV Database"]
@@ -51,7 +51,7 @@ graph TD
     C -->|"REST & JSON Endpoints"| E["Web App (acschedule.app)"]
     D <-->|"Settings & Extra Lessons Sync"| C
     E <-->|"Settings & Extra Lessons Sync"| C
-```
+{{< /mermaid >}}
 
 ### **How the New Edge Backend Works**:
 1. **Automated XLSX Scraping**: Cloudflare Workers scrape publicly published university schedule `.xlsx` spreadsheets.
@@ -66,7 +66,7 @@ Paired with **Antigravity CLI**, we deployed a multi-model workflow:
 - **Gemini 3.6 Flash**: High-speed codebase traversal, rapid multi-file refactoring, and UI layout orchestration.
 - **DeepSeek v4 (Flash + Pro)**: Complex architectural reasoning, multi-module DAG resolution, and UDF state management.
 
-```mermaid
+{{< mermaid >}}
 timeline
     title Academic Schedule Overhaul Timeline
     2012 - 2015 : Initial Java Release : Native Java App with SQLite & AsyncTasks
@@ -75,7 +75,7 @@ timeline
     July 23, 2026 : Phase 2 - Modern Android Stack : Jetpack Compose, Koin DI, Room DB, UDF & DataStore
     July 24, 2026 : Phase 3 - Web UI & Cloud Sync : Cloudflare Worker + React + TypeScript + Glassmorphism UI
     July 24, 2026 : Phase 4 - Play Store CI/CD : Triple-T Publisher, Maestro E2E, 1Password vault & v4.0 Release
-```
+{{< /mermaid >}}
 
 ---
 
