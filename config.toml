@@ -1,8 +1,11 @@
 baseURL = "https://blog.pavlospt.com/"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Solid Guacamole"
 theme = "PaperMod"
-paginate = 5
+
+[pagination]
+  pagerSize = 5
 
 [params]
   author = "Pavlos-Petros Tournaris"
