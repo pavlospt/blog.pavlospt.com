@@ -1,43 +1,51 @@
 baseURL = "https://blog.pavlospt.com/"
 locale = "en"
 title = "Solid Guacamole"
-theme = "blowfish"
-
-[params]
-  description = "Thoughts on Android, Kotlin, and software engineering"
-  showDate = true
-  showReadingTime = true
-  showWordCount = true
-  showTaxonomies = true
-  defaultTheme = "auto"
-
-  [params.homepage]
-    layout = "profile"
-    showRecent = true
-    showRecentTitle = "Recent Posts"
-    showMoreLink = true
-    showMoreLinkDest = "/posts/"
-
-  [params.author]
-    name = "Pavlos-Petros Tournaris"
-    image = ""
-    headline = "Android Engineer"
-    bio = "Writing about Kotlin, Compose, and building things that work."
-
-    [[params.author.links]]
-      name = "GitHub"
-      url = "https://github.com/pavlospt"
-      icon = "github"
-    [[params.author.links]]
-      name = "LinkedIn"
-      url = "https://linkedin.com/in/pavlospt"
-      icon = "linkedin"
+theme = "PaperMod"
 
 [pagination]
   pagerSize = 5
 
+[params]
+  author = "Pavlos-Petros Tournaris"
+  description = "Thoughts on Android, Kotlin, and software engineering"
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowPostNavLinks = true
+  ShowToc = true
+  defaultTheme = "auto"
+
+  [params.homeInfoParams]
+    Title = "Hi, I'm Pavlos"
+    Content = "Android engineer. Writing about Kotlin, Compose, and building things that work."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/pavlospt"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/pavlospt"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 30
+
 [outputs]
-  home = ["HTML", "RSS"]
+  home = ["HTML", "RSS", "JSON"]
 
 [markup.goldmark.renderer]
   unsafe = true
