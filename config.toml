@@ -4,7 +4,6 @@ title = "Solid Guacamole"
 theme = "blowfish"
 
 [params]
-  author = "Pavlos-Petros Tournaris"
   description = "Thoughts on Android, Kotlin, and software engineering"
   showDate = true
   showReadingTime = true
