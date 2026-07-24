@@ -1,51 +1,56 @@
 baseURL = "https://blog.pavlospt.com/"
 languageCode = "en-us"
-title = "Solid Quacamole"
-theme = "hugo-theme-chunky-poster"
-
-[menu]
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 10
-
-[taxonomies]
-category = "categories"
-tag = "tags"
-series = "series"
-author = "authors"
+title = "Solid Guacamole"
+theme = "PaperMod"
+paginate = 5
 
 [params]
   author = "Pavlos-Petros Tournaris"
-  description = "An engineering blogging site"
+  description = "Thoughts on Android, Kotlin, and software engineering"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  defaultTheme = "auto"
 
-  # Photo by Alexandru Acea on Unsplash
-  homepageImage = "/images/homepage-image.jpg"
-  share = true
-  showLanguageSwitcher = false
+  [params.homeInfoParams]
+    Title = "Hi, I'm Pavlos"
+    Content = "Android engineer. Writing about Kotlin, Compose, and building things that work."
 
-  # Custom CSS and JS. Relative to /static/css and /static/js respectively.
-  customCSS = []
-  customJS = []
+  [params.profileMode]
+    enabled = false
 
-  [params.social]
-    rss = true
-    email = "p.tournaris@gmail.com"
-    twitter = "https://twitter.com/tpavlos"
-    linkedin = "https://www.linkedin.com/in/pavlospt"
-    stack-overflow = "https://stackoverflow.com/users/1470614/pavlos"
-    github = "https://github.com/pavlospt"
-    medium = "https://medium.com/@p.tournaris"
-    keybase = "https://keybase.io/pavlospt"
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/pavlospt"
 
-[markup]
-  [markup.highlight]
-    codeFences = false
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/pavlospt"
 
-[services]
-  [services.instagram]
-    disableInlineCSS = true
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
 
-  [services.twitter]
-    disableInlineCSS = true
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 20
+  [[menu.main]]
+    name = "Search"
+    url = "/search/"
+    weight = 30
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = true
