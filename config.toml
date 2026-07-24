@@ -1,58 +1,39 @@
 baseURL = "https://blog.pavlospt.com/"
 locale = "en"
 title = "Solid Guacamole"
-theme = "PaperMod"
-
-[pagination]
-  pagerSize = 5
+theme = "blowfish"
 
 [params]
   author = "Pavlos-Petros Tournaris"
   description = "Thoughts on Android, Kotlin, and software engineering"
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  ShowToc = true
+  showDate = true
+  showReadingTime = true
+  showWordCount = true
+  showTaxonomies = true
   defaultTheme = "auto"
 
-  [params.homeInfoParams]
-    Title = "Hi, I'm Pavlos"
-    Content = "Android engineer. Writing about Kotlin, Compose, and building things that work."
+  [params.homepage]
+    layout = "profile"
+    showRecent = true
+    showRecentTitle = "Recent Posts"
+    showMoreLink = true
+    showMoreLinkDest = "/posts/"
 
-  [params.profileMode]
-    enabled = false
+  [params.author]
+    name = "Pavlos-Petros Tournaris"
+    image = ""
+    headline = "Android Engineer"
+    bio = "Writing about Kotlin, Compose, and building things that work."
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/pavlospt"
+    [params.author.links]
+      github = "https://github.com/pavlospt"
+      linkedin = "https://linkedin.com/in/pavlospt"
 
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://linkedin.com/in/pavlospt"
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
-  series = "series"
-
-[menu]
-  [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
-    weight = 10
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 20
-  [[menu.main]]
-    name = "Search"
-    url = "/search/"
-    weight = 30
+[pagination]
+  pagerSize = 5
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 [markup.goldmark.renderer]
   unsafe = true
